@@ -35,6 +35,8 @@ In the course of writing the above text, I can tell you that the commands that I
 - `gg` and `G` to go, respectively, to the first character on the first line and the first character on the last line in the document
 - `.` operator repeats the last command (this command is actually way more complex, but for now it lets me do something like `db` to delete the word before the cursor and then `.` to keep deleting more words. 
 - `ce` to delete from the cursor position to the end of the word
+- `f` plus a character in NORMAL mode finds the first occurrence of character to the right of the cursor on the same line.
+- 'F' plus a character in NORMAL mode does the same as `f` but searching to the left.
 
 Here are commands which I am using but only because I saw them on the internet (I don't fully understand why these commands are what they are and haven't had time to investigate yet)
 - `diw`: delete entire word the cursor is on 
@@ -43,7 +45,11 @@ Here are things I notice I haven't memorized very well yet
 - I confuse `j` and `k` a lot: it seems that my natural instinct is to think that `j` means up and `k` means down, but it is the opposite.
 - The `ESC` key seems to far away given how important and frequent it is to go to NORMAL mode
 
-Here are some other interesting links I've read at this point in the journey
+## `.vimrc`
+- At this point here is what I know about this file: it is a configuration file, you put it in your home folder (on a Mac this is `~/.vimrc`), and adding to it is an opportunity to use the vim commands learned so far. 
+- I added `set number` to see line numbers.
+
+## Here are some other interesting links I've read at this point in the journey
 
 - [Differences between Emacs and Vim](https://stackoverflow.com/questions/1430164/differences-between-emacs-and-vim)
 - [Gilles Castel: How I'm able to take notes in mathematics lectures using Latex and Vim](https://castel.dev/post/lecture-notes-1/)
@@ -56,3 +62,45 @@ So I fired up TexShop.
 Then I noticed that it wasn't a particularly efficient process writing there. So I googled something like "best vim editor for mac" and quickly stumbled on people talking about vim plugins that enable you to use latex. 
 
 Next, I found [this youtube video](https://www.youtube.com/watch?v=DOtM1mrWjUo) of a guy called Charlie Mars who has an awesome setup for making Latex documents using vim while listening to a lecture. He said he was heavily inspired by the article by Gilles Castel, and that is how I stumbled upon that article.
+
+## Summary
+
+- Use vimtutor, Anki, a vim cheatsheet, the book Practical Vim, and commit to using `vim` for everything.
+
+## 2.5 -  
+
+The end of vimtutor has two book recommendations - **Vi IMproved** by Sam Oualline and **Learning the Vi and Vim Editors** by Linda Lamb. I started to read these books.
+
+At this point I already have the feeling that the `ESC` key is essential but too far away from my hand position for my taste and comfort. Googling about this, it is clear this feeling is shared by many people and many remap some other key or sequence of keystrokes to `ESC`.
+
+Apparently, on [early keyboards the layout had ESC and CTRL in easier to reach positions](https://commons.wikimedia.org/wiki/File:KB_Terminal_ADM3A.svg#/media/File:KB_Terminal_ADM3A.svg). See also [Why is the "esc" key arguably the most important key in VIM so inaccessible](https://www.reddit.com/r/vim/comments/wmtjfj/why_is_the_esc_key_arguably_the_most_important/) on reddit.
+
+There are multiple options to address this issue. I decided to go with the simplest option for now: open System Preferences->Modifier Keys on Mac and change the action performed for the Caps Lock key to Escape. 
+
+I also mapped the sequence of keystrokes `jk` to `ESC` to try it out (some people do this, some people use `kj` or `jj`). I did this by adding the following to my `.vimrc`: `imap jk <Esc>`.
+
+Here are some links regarding this
+
+[Using Caps Lock as Esc in Mac OS X](https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x) 
+[Using Caps Lock as Esc in Mac OS X](https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x/40254864#40254864)
+
+New commands I learned
+- `ZZ`, that is two capital `Z`'s, writes the file and exits.
+
+Observations
+- I've been d
+
+## I started using `:help` a bit
+`:help` opens the help documentation in vim. Perhaps more useful is passing a topic about which you want help, e.g. `:help .` will get you help on the `.` operator (as used in NORMAL mode). 
+
+To get help about a command in INSERT mode, you use a command like `:help _i_CTRL-H`, which gets you help on the `CTRL-H` command when used in INSERT mode. 
+The `_i` is a prefix, and there are others.
+
+New commands in `NORMAL` mode
+- `(` moves to the beginning of the current sentence
+- `)` moves to the beginning of the next sentence
+- `{` moves to the beginning of the current paragraph 
+- '}` moves to the beginning of the next paragraph
+- `t[character]` works like `f[character]` but stops one character before the indicated character. E.g., `tf` searches for the character `f` to the right of the cursor, on the same line, and moves to the position right before. `T[character` mirrors `F[character]`.
+
+
