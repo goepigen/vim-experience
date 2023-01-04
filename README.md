@@ -2,23 +2,23 @@
 
 I am 2.5 hours into my journey learning vim. I intend for this document to be written as I progress, letting the reader know the vim-related things I have been reading, learning, and working on. Before starting a did a quick google search for things like "how many hours does it take to become an expert at vim". I hope this document can contribute to answering this question.
 
-Here is what I have done so far.
+Here is what I have done so far, written as a to-do list
 
 1. Complete the seven vimtutor lessons.
 2. Start reading the book "Practical Vim" by Drew Neil.
 3. Have a [vim cheatsheet](https://vim.rtorr.com/) in a tab (or printed out) for commands that are useful but don't appear immediately or at all in vimtutor (for example, how to navigate up and down in a document by paragraph or page instead of by line)
 4. Commit to using vim for all text editing tasks (programming, writing documentation such as this current one, editing config files, etc)
 5. Set your terminal to use vi. This means adding the code `set -o vi` to a file like ~/bash_profile. Here are some links about this
+6. Add newly learned commands to a spaced repetition app (Anki) and periodically review them. 
 
 [StackOverflow: Is it possible to use vim keybindings in iterm2?](https://superuser.com/questions/1360220/is-it-possible-to-use-vim-key-bindings-in-iterm2)
 [Unix&Linux StackExchange: Advantags of using set -o vi](https://unix.stackexchange.com/questions/30454/advantages-of-using-set-o-vi/30455#30455?newreg=dd568e4016bf455a8a5bd0d32ff86801)
 
-6. **Every** time you don't know how to do something, google it. 
+6. **Every** time you don't know how to do something, google it and incorporate the solution into your vim workflow (the first step is to add it to Anki)
 
 Here are some things I have searched for in the course of writing the initial portion of this document (ie, 2.5 hours in)
 
 - [How to delete backwards](https://stackoverflow.com/questions/1373841/vim-deleting-backward-tricks)
-- 
 
 In the course of writing the above text, I can tell you that the commands that I am using at this stage are
 
@@ -35,8 +35,6 @@ In the course of writing the above text, I can tell you that the commands that I
 Here are things I notice I haven't memorized very well yet
 - I confuse `j` and `k` a lot: it seems that my natural instinct is to think that `j` means up and `k` means down, but it is the opposite.
 - The `ESC` key seems to far away given how important and frequent it is to go to NORMAL mode
-
-As examples of the types of things that a simple text like this makes me think about optimizing  
 
 Here are some other interesting links I've read at this point in the journey
 
