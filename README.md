@@ -1,5 +1,7 @@
 # My Journey Learning Vim
 
+## 2.5h
+
 I am 2.5 hours into my journey learning vim. I intend for this document to be written as I progress, letting the reader know the vim-related things I have been reading, learning, and working on. Before starting a did a quick google search for things like "how many hours does it take to become an expert at vim". I hope this document can contribute to answering this question.
 
 Here is what I have done so far, written as a to-do list
