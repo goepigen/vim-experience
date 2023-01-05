@@ -1,10 +1,10 @@
 # My Journey Learning Vim
 
-## 2.5h
+# 2.5h
 
 I am 2.5 hours into my journey learning vim. I intend for this document to be written as I progress, letting the reader know the vim-related things I have been reading, learning, and working on. Before starting a did a quick google search for things like "how many hours does it take to become an expert at vim". I hope this document can contribute to answering this question.
 
-Here is what I have done so far, written as a to-do list
+### Here is what I have done so far, written as a to-do list
 
 1. Complete the seven vimtutor lessons.
 2. Start reading the book "Practical Vim" by Drew Neil.
@@ -18,12 +18,12 @@ Here is what I have done so far, written as a to-do list
 
 6. **Every** time you don't know how to do something, google it and incorporate the solution into your vim workflow (the first step is to add it to Anki)
 
-Here are some things I have searched for in the course of writing the initial portion of this document (ie, 2.5 hours in)
+### Here are some things I have searched for in the course of writing the initial portion of this document (ie, 2.5 hours in)
 
 - [How to delete backwards](https://stackoverflow.com/questions/1373841/vim-deleting-backward-tricks)
 - [Delete word after or around cursor in vim](https://stackoverflow.com/questions/833838/delete-word-after-or-around-cursor-in-vim)
 
-In the course of writing the above text, I can tell you that the commands that I am using at this stage are
+### In the course of writing the above text, I can tell you that the commands that I am using at this stage are
 
 - Of course, `h,j,k,l`
 - `$` to move to the last character on a line
@@ -38,18 +38,18 @@ In the course of writing the above text, I can tell you that the commands that I
 - `f` plus a character in NORMAL mode finds the first occurrence of character to the right of the cursor on the same line.
 - 'F' plus a character in NORMAL mode does the same as `f` but searching to the left.
 
-Here are commands which I am using but only because I saw them on the internet (I don't fully understand why these commands are what they are and haven't had time to investigate yet)
+### Here are commands which I am using but only because I saw them on the internet (I don't fully understand why these commands are what they are and haven't had time to investigate yet)
 - `diw`: delete entire word the cursor is on 
 
-Here are things I notice I haven't memorized very well yet
+### Here are things I notice I haven't memorized very well yet
 - I confuse `j` and `k` a lot: it seems that my natural instinct is to think that `j` means up and `k` means down, but it is the opposite.
 - The `ESC` key seems to far away given how important and frequent it is to go to NORMAL mode
 
-## `.vimrc`
+### `.vimrc`
 - At this point here is what I know about this file: it is a configuration file, you put it in your home folder (on a Mac this is `~/.vimrc`), and adding to it is an opportunity to use the vim commands learned so far. 
 - I added `set number` to see line numbers.
 
-## Here are some other interesting links I've read at this point in the journey
+### Here are some other interesting links I've read at this point in the journey
 
 - [Differences between Emacs and Vim](https://stackoverflow.com/questions/1430164/differences-between-emacs-and-vim)
 - [Gilles Castel: How I'm able to take notes in mathematics lectures using Latex and Vim](https://castel.dev/post/lecture-notes-1/)
@@ -63,11 +63,11 @@ Then I noticed that it wasn't a particularly efficient process writing there. So
 
 Next, I found [this youtube video](https://www.youtube.com/watch?v=DOtM1mrWjUo) of a guy called Charlie Mars who has an awesome setup for making Latex documents using vim while listening to a lecture. He said he was heavily inspired by the article by Gilles Castel, and that is how I stumbled upon that article.
 
-## Summary
+### Summary
 
 - Use vimtutor, Anki, a vim cheatsheet, the book Practical Vim, and commit to using `vim` for everything.
 
-## 2.5 -  
+# 5.25h
 
 The end of vimtutor has two book recommendations - **Vi IMproved** by Sam Oualline and **Learning the Vi and Vim Editors** by Linda Lamb. I started to read these books.
 
@@ -126,7 +126,7 @@ It seems that most of these digraphs combine `CTRL K` with something extra, like
 - incremental search is turned on with `:set incsearch`
 - reverse search is done using the `?` command, with analogous use of `n` (next occurrence searching backwards)
 - `N` searches in the opposite direction to the search direction. That is, if we are doing a forward search using `/` then `n` gets the next occurrence in the forward direction and `N` gets the next occurrence in the backward direction. If we are doing a backward search using `?` then `n` and `N` give us next occurrences in the backward and forward directions, respectively.
-
+- Vim uses regular expressions. 
 
 ## Quick Tips
 - When we open a help page (say, `:help quote`), for reasons I have yet to discover the screen (ie, my iTerm terminal) gets split with one half being the help page and the other half my original file. This is helpful in the sense that I can read the help pages while looking at the original file that likely prompted the need to look at the help pages. 
