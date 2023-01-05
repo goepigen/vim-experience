@@ -67,7 +67,7 @@ Next, I found [this youtube video](https://www.youtube.com/watch?v=DOtM1mrWjUo) 
 
 - Use vimtutor, Anki, a vim cheatsheet, the book Practical Vim, and commit to using `vim` for everything.
 
-# 5.25h
+# 8h 
 
 The end of vimtutor has two book recommendations - **Vi IMproved** by Sam Oualline and **Learning the Vi and Vim Editors** by Linda Lamb. I started to read these books.
 
