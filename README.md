@@ -84,23 +84,51 @@ Here are some links regarding this
 [Using Caps Lock as Esc in Mac OS X](https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x) 
 [Using Caps Lock as Esc in Mac OS X](https://stackoverflow.com/questions/127591/using-caps-lock-as-esc-in-mac-os-x/40254864#40254864)
 
-New commands I learned
-- `ZZ`, that is two capital `Z`'s, writes the file and exits.
-
-Observations
-- I've been d
-
 ## I started using `:help` a bit
 `:help` opens the help documentation in vim. Perhaps more useful is passing a topic about which you want help, e.g. `:help .` will get you help on the `.` operator (as used in NORMAL mode). 
 
 To get help about a command in INSERT mode, you use a command like `:help _i_CTRL-H`, which gets you help on the `CTRL-H` command when used in INSERT mode. 
 The `_i` is a prefix, and there are others.
 
-New commands in `NORMAL` mode
+## New commands in `NORMAL` mode
+- `ZZ`, that is two capital `Z`'s, writes the file and exits.
 - `(` moves to the beginning of the current sentence
 - `)` moves to the beginning of the next sentence
 - `{` moves to the beginning of the current paragraph 
 - '}` moves to the beginning of the next paragraph
 - `t[character]` works like `f[character]` but stops one character before the indicated character. E.g., `tf` searches for the character `f` to the right of the cursor, on the same line, and moves to the position right before. `T[character` mirrors `F[character]`.
+- `y{motion}` copies (ie, "yanks") whatever is indicated by `motion`. For example, `yy` copies the current line, then `p` pastes it. `yw` copies to the beginning of the next word, `y$` copies the current line starting from the cursor position (excluding newline character), `yiw` copies the word the cursor is in, etc. [Here is more information](https://vim.fandom.com/wiki/Copy,_cut_and_paste#:~:text=Press%20d%20to%20cut%20(or,or%20p%20to%20paste%20after.).  
+- `d` seems to actually be the operator `cut`, not `delete`.
+- `"_dd` deletes a line but saves it to the "black hole register"
+- `CTRL-u` and `CTRL-d` scroll up and down half a screen, respectively.
+- `D` is a shortcut for `d$`
+- `c` means **change**. It acts just like the `d` command but it leaves you in INSERT mode. An exception to this is `cw` and `dw`: they aren't exactly the same, but pretty close.
+- `cc` deletes the entire line and goes into INSERT mode, and `C` is the same as `c$`
+- `df{character}` deletes (ie, cuts) up to next `character`
+- `J` joins the current line with the next one with a space added to the end of the first line 
+Note that many of the topics above are rabbit holes I could get into, but at this point I'd like to trust that the books I am reading will be better at deciding the topics most useful to me at this stage, rather than drilling down into too much detail about specific things I don't know about (like registers). That being said, `:help quote` tells me that when I type in `"{register}` I am telling vim to use `register` for the next delete, and `:reg[isters]` shows me the available registers and what's on them. For now this is enough for me.
+- `~` changes a character's case
+
+## Macros
+To start recording a macro on register `character` use the command `q[character]`. To stop recording, type `q`. To use the macro, use the command `:@[character]`
+
+## Digraphs
+If we ever need to display some crazy character, we can enter the command `:digraphs` to see a table of characters and the digraphs that represent them in `vim`.
+A digraph is a combination of two characters that represent one character.
+
+It seems that most of these digraphs combine `CTRL K` with something extra, like for example `sa` which gives us さ.
+
+## Search
+- `/` to start the search, then the string. After an occurrence has been found, `n` to go to the next occurrence. Can also use things like `3n` to go to the third next occurrence.
+- after `/`, up and down keys go through the search history
+- `:set hlsearch` turns on the highlighting of all found strings after a search
+- `:nohlsearch` turns of the currently highlighted strings but keeps highlighting on for future searches
+- incremental search is turned on with `:set incsearch`
+- reverse search is done using the `?` command, with analogous use of `n` (next occurrence searching backwards)
+- `N` searches in the opposite direction to the search direction. That is, if we are doing a forward search using `/` then `n` gets the next occurrence in the forward direction and `N` gets the next occurrence in the backward direction. If we are doing a backward search using `?` then `n` and `N` give us next occurrences in the backward and forward directions, respectively.
 
 
+## Quick Tips
+- When we open a help page (say, `:help quote`), for reasons I have yet to discover the screen (ie, my iTerm terminal) gets split with one half being the help page and the other half my original file. This is helpful in the sense that I can read the help pages while looking at the original file that likely prompted the need to look at the help pages. 
+
+To switch between the two "windows" use `CTRL-w CTRL-w`.
