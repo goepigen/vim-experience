@@ -132,3 +132,11 @@ It seems that most of these digraphs combine `CTRL K` with something extra, like
 - When we open a help page (say, `:help quote`), for reasons I have yet to discover the screen (ie, my iTerm terminal) gets split with one half being the help page and the other half my original file. This is helpful in the sense that I can read the help pages while looking at the original file that likely prompted the need to look at the help pages. 
 
 To switch between the two "windows" use `CTRL-w CTRL-w`.
+
+## `.vimrc` updates
+- I wanted to be able to insert a blank line after the line of the cursor, keeping the cursor where it is and in NORMAL mode. I read [this StackExchange post](https://superuser.com/questions/607163/inserting-a-blank-line-in-vim) entitled **Inserting a blank line in vim?** that offered multiple solutions. I decided to go with a simple solution for now, adding the following to my `.vimrc`: 
+
+`map <Enter> o<ESC>k`
+`map <S-Enter> O<ESC>`
+
+which allows me to obtain the desired behavior when I press `<Enter>` in NORMAL mode. `<S-Enter>` means `SHIFT` plus `ENTER`, which should add a blank line above the cursor line. This is not, however, working as of right now.
